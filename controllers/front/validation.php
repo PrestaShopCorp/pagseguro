@@ -48,7 +48,6 @@ class PagSeguroValidationModuleFrontController extends ModuleFrontController
         try {
             
             $validate->validate();
-            Configuration::updateValue('PAGSEGURO_CONFIGURATION_OK', true);
             if ($this->checkout) {
                 die($validate->request($this->checkout));
             }
