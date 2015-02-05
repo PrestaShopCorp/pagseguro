@@ -1,5 +1,5 @@
 {*
-* 2007-2011 PrestaShop 
+* 2007-2011 PrestaShop
 *
 * NOTICE OF LICENSE
 *
@@ -33,6 +33,9 @@
 function checkout()
 {
     var url = "{$action_url|escape}";
+    if (location.protocol === 'https:') {
+        url = url.replace("http", "https");
+    }
     url = url.replace("&amp;","&");
     url = url.replace("&amp;","&");
     var query = $.ajax({
@@ -51,7 +54,7 @@ function checkout()
             });
         },
         error: function(error) {
-            redirecToPageError();            
+            redirecToPageError();
         }
     });
 }
@@ -60,7 +63,7 @@ function redirecToPageError(){
 }
 </script>
 
-<style type="text/css" media="all"> 
+<style type="text/css" media="all">
 	div#center_column{ width: {$width_center_column|escape}; }
 </style>
 
