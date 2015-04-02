@@ -1,5 +1,5 @@
 {*
-* 2007-2011 PrestaShop
+* 2007-2011 PrestaShop 
 *
 * NOTICE OF LICENSE
 *
@@ -54,7 +54,7 @@ function checkout()
             });
         },
         error: function(error) {
-            redirecToPageError();
+            redirecToPageError();            
         }
     });
 }
@@ -63,7 +63,7 @@ function redirecToPageError(){
 }
 </script>
 
-<style type="text/css" media="all">
+<style type="text/css" media="all"> 
 	div#center_column{ width: {$width_center_column|escape}; }
 </style>
 
