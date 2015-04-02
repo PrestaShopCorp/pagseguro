@@ -23,19 +23,12 @@
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-<style> ul, li { list-style-type: none;} </style>
-<div class="row">
-    <div class="col-md-12">
-		<h2>{$titulo|escape:'none'}</h2>
-	</div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-		<ul>
-		    {foreach from=$error item=erro}
-		    	<li><img src='{$erro[0]|escape}'> {$erro[1]|escape:'none'}</li>
-		    {/foreach}
-		</ul>
-	</div>
-</div>
 
+<h2 class="title" title="{$pageTitle}">{$pageTitle}</h2>
+<ul class="pagseguro-list">
+    {foreach from=$requirements item=requirement}
+    	
+   		<li {if !$requirement[0]} class="pagseguro-list-item-error" {/if} >{$requirement[1]|escape:'none'}</li>
+
+    {/foreach}
+</ul>
